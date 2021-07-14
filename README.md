@@ -5,7 +5,7 @@ Ultrasonic-Transceiver is an Arduino and ultrasonic transducer based project tha
 ## Images
 
 <div align="center">
-   <img src="./images/arduino_circuit.png" width="100%" height="50%" />
+   <img src="./images/arduino_circuit.png" width="100%" height="100%" />
 <br/>
    <img src="./images/circuit.jpg" width="100%" height="100%" />
 </div>
@@ -14,7 +14,7 @@ Ultrasonic-Transceiver is an Arduino and ultrasonic transducer based project tha
 
 <img src="./images/ultrasonic_receiver.png">
 
-This project and image was refrenced from <a href="http://www.zolalab.com.br/eletronica_projetos/ultrasonic_talk.php"> here</a>.
+This project and image was referenced from <a href="http://www.zolalab.com.br/eletronica_projetos/ultrasonic_talk.php"> here</a>.
 
 ## Components Used
 
@@ -42,7 +42,7 @@ If the value:
 - lies between 290 and 600 it is encoded as ONE (1)
 - lies above 600 it is encoded as end of character
 
-After encoding each signal eignt times a character is produced. This process is again repeated to get the string.
+After encoding each signal eight times a character is produced. This process is again repeated to get the string.
 
 
 ## Watch The Video
