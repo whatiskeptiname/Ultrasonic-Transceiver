@@ -1,30 +1,49 @@
-# RC-Car
+# Ultrasonic-Transceiver
 
-RC-Car is an Arduino-based Remote Controlled car with Servo arm, developed for two events Vector organized by Western Region Campus (WRC) and Locus organized by Pulchowk Engineering Campus.
+Ultrasonic-Transceiver is an Arduino and ultrasonic transducer based project that can send and receive data using ultrasonic waves.
 
 ## Images
 
 <div align="center">
    <img src="./images/arduino_circuit.png" width="100%" height="50%" />
-
 <br/>
-
    <img src="./images/circuit.jpg" width="100%" height="100%" />
 </div>
 
+## Schematic Diagram
+
+<img src="./images/ultrasonic_receiver.png">
+
+This project and image was refrenced from <a href="http://www.zolalab.com.br/eletronica_projetos/ultrasonic_talk.php"> here</a>.
+
 ## Components Used
 
-1. Arduino Uno
-2. Bot Chassis
-3. Geared Motor *4
-4. Lipo Battery
-5. Servo
-6. Transmitter FLYSKY
-7. Receiver FS-IA10B
+1. Arduino Uno *2
+2. Ultrasonic transducer (salvaged from HC-SR04)
+3. LM386
+4. LM393
+5. 10K potentiometer
+6. LED
+7. Resistor 220 ohm and 10K ohm
+8. Capacitor 100nF
+
+These components are listed to match the schematic and differs with my circuit. Extra resistors are used because of the unavailability of exact resistance and they are combined to get the same value as of schematic.
+
 
 ## Working
 
-The communication between bot and transmitter is done in Pulse Position Modulation (PPM) mode. **PPMReader.cpp**, **InterruptHandler.h**, **WInterrupts.cpp** and **PPMReader.h** files are used to convert the raw ppm signals to control information. In **wrapper.h**, functions used for the bot control are described and these functions are implemented in **RC-Car.ino**.
+**Transmitter:**
+For the transmitter part Ultrasonic Transmitter is directly connected to arduino pin number 3. Tone function is used to generate frequency in ultrasonic range. When a string is given, individual characters are seperated and is converted to binary digit (bit). For every HIGH (1) in the character binary representation a 2 milli second pulse of 4K Hz is sent and for every LOW (0) a 4 milli second pulse of 4k Hz is sent. At the end of each character a 11 ms pause is taken before repetating the entire process again.
+
+**Receiver:**
+For the receiver part external circuit is used to amplify convert the analog signal in to digital signal. LM386 is an audio amplifier. It is used to amplify the received signal. The amplified signal is then sent to comparator which converts the analog signal to digital. If the comparator receives the frequency it transmit it as HIGH for that period and if it receives nothing it transmits LOW. The duration of the HIGH are calculated, while the data is HIGH a counter **bits1** is constantly added with 1. The **bits1** will be later used to decide weather the transmitted value is HIGH or LOW according it its value.
+If the value:
+- lies between 20 and 290 it is encoded as ZERO (0)
+- lies between 290 and 600 it is encoded as ONE (1)
+- lies above 600 it is encoded as end of character
+
+After encoding each signal eignt times a character is produced. This process is again repeated to get the string.
+
 
 ## Watch The Video
 
