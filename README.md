@@ -44,7 +44,6 @@ If the value:
 
 After encoding each signal eight times a character is produced. This process is again repeated to get the string.
 
-
 ## Watch The Video
 
 <div align="center">

@@ -7,7 +7,7 @@ boolean capture = false; // HIGH if the received signal hods string else LOW
 void setup() 
 {
    Serial.begin(115200); // Set the serial monitor to 115200 baud rate
-   pinMode(RX_pin, INPUT_PULLUP); // Configure RX_pin to PULLUP resistro
+   pinMode(RX_pin, INPUT_PULLUP); // Configure RX_pin to PULLUP resistro (but it should be PULLDOWN XD STILL CONFUSED )
 }
 
 void loop() 
