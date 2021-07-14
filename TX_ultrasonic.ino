@@ -23,7 +23,10 @@ void send(String msg)
     tone(3, 40000); // Generate a 40k Hz sound wave for 10 milliseconds 
     delay(10);
     noTone(3); // Stop generating the sound
+<<<<<<< HEAD
 
+=======
+>>>>>>> cce9e0cf9ffcdbef5e8c3103cfc382d88e9f94f7
     for (int i = 0; i < 8; i++) // Traverse each bit of a character
     {
       bool b; // Variable to store bit 
@@ -41,7 +44,10 @@ void send(String msg)
       noTone(3);// After sending a character, send nothing for 11 milliseconds
       delay(11);
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> cce9e0cf9ffcdbef5e8c3103cfc382d88e9f94f7
     pos++; // Go to next character in the string
   }
 }
