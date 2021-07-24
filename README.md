@@ -1,4 +1,4 @@
-# Ultrasonic-Transceiver
+1# Ultrasonic-Transceiver
 
 Ultrasonic-Transceiver is an Arduino and ultrasonic transducer based project that can send and receive data using ultrasonic waves.
 
@@ -19,13 +19,13 @@ This project and image was referenced from <a href="http://www.zolalab.com.br/el
 ## Components Used
 
 1. Arduino Uno *2
-2. Ultrasonic transducer (salvaged from HC-SR04)
-3. LM386
-4. LM393
-5. 10K potentiometer
-6. LED
-7. Resistor 220 ohm and 10K ohm
-8. Capacitor 100nF
+1. Ultrasonic transducer (salvaged from HC-SR04)
+1. LM386
+1. LM393
+1. 10K potentiometer
+1. LED
+1. Resistor 220 ohm and 10K ohm
+1. Capacitor 100nF
 
 These components are listed to match the schematic and differs with my circuit. Extra resistors are used because of the unavailability of exact resistance and they are combined to get the same value as of schematic.
 
